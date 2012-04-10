@@ -18,30 +18,11 @@ WriteMakefile(
   VERSION_FROM => 'lib/JSON/HPack.pm',
   ABSTRACT     => 'A simple and fast JSON Packer',
   AUTHOR       => 'Venkatakrishnan Ganesh <gvenkat@cpan.org>',
-
-  ( $mm < 6.46
-    ? ()
-    : (
-      META_MERGE => {
-        requires  => {perl => '5.008007'},
-        no_index => {directory => [qw/t/]}
-      },
-      META_ADD => {
-        build_requires     => {
-          'JSON::Any' => 0,
-          'common::sense' => 0
-        },
-
-        test_requires => {
-          'Test::More' => 0,   
-          'Test::Deep' => 0
-        },
-
-        configure_requires => {}
-      },
-    )
-  ),
-
-  test => {TESTS => 't/*.t t/*/*.t'}
+  LICENSE      => 'artistic_2',
+  'PREREQ_PM' => {
+       'Test::More'  => 0, 
+       'common::sense' => 0,
+       'JSON::Any'  => 0
+  }
 );
 
